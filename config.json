@@ -1,0 +1,32 @@
+{
+  "spell": {
+    "color": [120, 130, 40],
+    "tol": 35,
+    "num_classes": 1997
+  },
+  "monster": {
+    "color": [81, 86, 138],
+    "tol": 35,
+    "num_classes": 4602
+  },
+  "link": {
+    "color": [97, 66, 8],
+    "tol": 35,
+    "num_classes": 305
+  },
+  "xyz": {
+    "color": [61, 46, 21],
+    "tol": 20,
+    "num_classes": 417
+  },
+  "syncro": {
+    "color": [180, 173, 165],
+    "tol": 35,
+    "num_classes": 341
+  },
+  "trap": {
+    "color": [124, 77, 133],
+    "tol": 35,
+    "num_classes": 1587
+  }
+}

@@ -27,26 +27,26 @@ def get_lower_edges(coordinates, h, w):
     if not isinstance(coordinates, np.ndarray):
         coordinates = np.array(coordinates)
 
-    try:
+    # try:
 
-        edge1 = get_edges(1, coordinates)
-        edge2 = get_edges(2, coordinates)
-        edge3 = get_edges(3, coordinates)
-        edge4 = get_edges(4, coordinates)
+    edge1 = get_edges(1, coordinates)
+    edge2 = get_edges(2, coordinates)
+    edge3 = get_edges(3, coordinates)
+    edge4 = get_edges(4, coordinates)
 
-        if coordinates[edge1][0] - coordinates[edge3][0] < coordinates[edge1][1] - coordinates[edge2][1]:
-            if edge1 < h:
-                return [coordinates[edge1], coordinates[edge2]], [coordinates[edge3], coordinates[edge4]]
-            else:
-                return [coordinates[edge2], coordinates[edge1]], [coordinates[edge4], coordinates[edge3]]
+    if coordinates[edge1][0] - coordinates[edge3][0] < coordinates[edge1][1] - coordinates[edge2][1]:
+        if edge1 < h:
+            return [coordinates[edge1], coordinates[edge2]], [coordinates[edge3], coordinates[edge4]]
         else:
-            if edge1 < w:
-                return [coordinates[edge1], coordinates[edge3]], [coordinates[edge2], coordinates[edge4]]
-            else:
-                return [coordinates[edge3], coordinates[edge1]], [coordinates[edge4], coordinates[edge2]]
+            return [coordinates[edge2], coordinates[edge1]], [coordinates[edge4], coordinates[edge3]]
+    else:
+        if edge1 < w:
+            return [coordinates[edge1], coordinates[edge3]], [coordinates[edge2], coordinates[edge4]]
+        else:
+            return [coordinates[edge3], coordinates[edge1]], [coordinates[edge4], coordinates[edge2]]
 
-    except:
-        return None, None
+    # except:
+    #     return None, None
 
 
 def crop_min_area_rect(roi, box, angle):
@@ -101,7 +101,7 @@ def extract_contours(roi):
     return contours
 
 
-def extract_artwork(contour, width, height):
+def extract_artwork(contour, height, width):
 
     rect = cv2.minAreaRect(contour)
     box_txt = cv2.boxPoints(rect)
@@ -109,7 +109,7 @@ def extract_artwork(contour, width, height):
     # cv2.drawContours(roi_original, [box], 0, (152, 255, 119), 2)
     edges1, edges2 = get_lower_edges(box_txt, height, width)
     if edges1 is None:
-        return None
+        return None, None
 
     dx1 = edges1[1][0] - edges1[0][0]
     dx2 = edges2[1][0] - edges2[0][0]
@@ -122,17 +122,17 @@ def extract_artwork(contour, width, height):
     box_artwork = np.array([
         [edges1[1][0] + dx1 * 5 / dst1, edges1[1][1] + dy1 * 5 / dst1],
         [edges2[1][0] + dx2 * 5 / dst2, edges2[1][1] + dy2 * 5 / dst2],
-        [edges2[1][0] + dx2 * 95 / dst2, edges2[1][1] + dy2 * 100 / dst2],
-        [edges1[1][0] + dx1 * 95 / dst1, edges1[1][1] + dy1 * 100 / dst1],
+        [edges2[1][0] + dx2 * 75 / dst2, edges2[1][1] + dy2 * 80 / dst2],
+        [edges1[1][0] + dx1 * 75 / dst1, edges1[1][1] + dy1 * 80 / dst1],
     ], dtype=np.int64)
 
     return box_artwork, box_txt
 
 
 def get_card_type(roi, card_types, box_artwork, box_txt, configs):
-    roi = roi.reshape((roi.shape[0] * roi.shape[1], 3)).astype(float)
     cv2.drawContours(roi, [box_artwork], 0, (1000, 1000, 1000), -1)
     cv2.drawContours(roi, [box_txt], 0, (1000, 1000, 1000), -1)
+    roi = roi.reshape((roi.shape[0] * roi.shape[1], 3)).astype(float)
 
     counts = [
         np.isclose(
@@ -144,6 +144,3 @@ def get_card_type(roi, card_types, box_artwork, box_txt, configs):
 
     index_max = np.argmax(counts)
     return card_types[index_max]
-
-
-

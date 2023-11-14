@@ -130,6 +130,7 @@ def extract_artwork(contour, height, width):
 
 
 def get_card_type(roi, card_types, box_artwork, box_txt, configs):
+    roi = cv2.medianBlur(roi, 15)
     cv2.drawContours(roi, [box_artwork], 0, (1000, 1000, 1000), -1)
     cv2.drawContours(roi, [box_txt], 0, (1000, 1000, 1000), -1)
     roi = roi.reshape((roi.shape[0] * roi.shape[1], 3)).astype(float)

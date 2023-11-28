@@ -27,26 +27,24 @@ def get_lower_edges(coordinates, h, w):
     if not isinstance(coordinates, np.ndarray):
         coordinates = np.array(coordinates)
 
-    # try:
+    try:
+        edge1 = get_edges(1, coordinates)
+        edge2 = get_edges(2, coordinates)
+        edge3 = get_edges(3, coordinates)
+        edge4 = get_edges(4, coordinates)
 
-    edge1 = get_edges(1, coordinates)
-    edge2 = get_edges(2, coordinates)
-    edge3 = get_edges(3, coordinates)
-    edge4 = get_edges(4, coordinates)
-
-    if coordinates[edge1][0] - coordinates[edge3][0] < coordinates[edge1][1] - coordinates[edge2][1]:
-        if edge1 < h:
-            return [coordinates[edge1], coordinates[edge2]], [coordinates[edge3], coordinates[edge4]]
+        if coordinates[edge1][0] - coordinates[edge3][0] < coordinates[edge1][1] - coordinates[edge2][1]:
+            if coordinates[edge1][1] < h / 2:
+                return [coordinates[edge1], coordinates[edge2]], [coordinates[edge3], coordinates[edge4]]
+            else:
+                return [coordinates[edge2], coordinates[edge1]], [coordinates[edge4], coordinates[edge3]]
         else:
-            return [coordinates[edge2], coordinates[edge1]], [coordinates[edge4], coordinates[edge3]]
-    else:
-        if edge1 < w:
-            return [coordinates[edge1], coordinates[edge3]], [coordinates[edge2], coordinates[edge4]]
-        else:
-            return [coordinates[edge3], coordinates[edge1]], [coordinates[edge4], coordinates[edge2]]
-
-    # except:
-    #     return None, None
+            if coordinates[edge1][1] > w / 2:
+                return [coordinates[edge1], coordinates[edge3]], [coordinates[edge2], coordinates[edge4]]
+            else:
+                return [coordinates[edge3], coordinates[edge1]], [coordinates[edge4], coordinates[edge2]]
+    except IndexError:
+        return None, None
 
 
 def crop_min_area_rect(roi, box, angle):
@@ -85,7 +83,6 @@ def clean_deck_list(deck_list, card_type, classes):
 
 
 def extract_contours(roi):
-
     gray = cv2.cvtColor(roi, cv2.COLOR_BGR2GRAY)
     gray = cv2.bilateralFilter(gray, 11, 17, 17)
     equalized = cv2.equalizeHist(gray)
@@ -102,11 +99,9 @@ def extract_contours(roi):
 
 
 def extract_artwork(contour, height, width):
-
     rect = cv2.minAreaRect(contour)
     box_txt = cv2.boxPoints(rect)
     box_txt = np.intp(box_txt)
-    # cv2.drawContours(roi_original, [box], 0, (152, 255, 119), 2)
     edges1, edges2 = get_lower_edges(box_txt, height, width)
     if edges1 is None:
         return None, None
@@ -130,14 +125,18 @@ def extract_artwork(contour, height, width):
 
 
 def get_card_type(roi, card_types, box_artwork, box_txt, configs):
-    roi = cv2.medianBlur(roi, 15)
-    cv2.drawContours(roi, [box_artwork], 0, (1000, 1000, 1000), -1)
-    cv2.drawContours(roi, [box_txt], 0, (1000, 1000, 1000), -1)
-    roi = roi.reshape((roi.shape[0] * roi.shape[1], 3)).astype(float)
+    roi_blurred = cv2.medianBlur(roi, 7)
+
+    cv2.drawContours(roi_blurred, [box_artwork], 0, (255, 255, 255), -1)
+    cv2.drawContours(roi_blurred, [box_txt], 0, (255, 255, 255), -1)
+    roi_blurred = cv2.medianBlur(roi_blurred, 7)
+    roi_hsv = cv2.cvtColor(roi_blurred, cv2.COLOR_BGR2HSV)[:, :, 0]
+
+    roi = roi_hsv.reshape((roi.shape[0] * roi.shape[1])).astype(float)
 
     counts = [
         np.isclose(
-            np.array([np.linalg.norm(diff) for diff in (roi - configs[card_type]["colors"])]),
+            np.array([diff for diff in (roi - configs[card_type]["colors"])]),
             np.zeros(roi.shape[0]),
             atol=configs[card_type]["tol"]
         ).sum() for card_type in card_types
@@ -145,3 +144,19 @@ def get_card_type(roi, card_types, box_artwork, box_txt, configs):
 
     index_max = np.argmax(counts)
     return card_types[index_max]
+
+
+def get_angle(box_artwork):
+    dx = box_artwork[3][0] - box_artwork[0][0]
+    dy = box_artwork[3][1] - box_artwork[0][1]
+
+    if abs(dx) < abs(dy):
+        if dy > 0:
+            return 180 - np.arctan(dx / dy) * 180 / np.pi
+        else:
+            return np.arctan(dx / dy) * 180 / np.pi
+    else:
+        if dx > 0:
+            return 180 - np.arctan(dx / (dy + 1e-10)) * 180 / np.pi
+        else:
+            return np.arctan(dx / (dy + 1e-10)) * 180 / np.pi

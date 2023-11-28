@@ -1,32 +1,53 @@
 {
-  "spell": {
-    "colors": [120, 130, 40],
-    "tol": 35,
-    "num_classes": 1997
-  },
+  "card_types": ["spell", "monster", "normal_monster", "trap", "fusion", "ritual"],
   "monster": {
-    "colors": [81, 86, 138],
-    "tol": 35,
+    "colors": 6,
+    "tol": 5,
     "num_classes": 4602
   },
-  "link": {
-    "colors": [97, 66, 8],
-    "tol": 35,
-    "num_classes": 305
+  "spell": {
+    "colors": 100,
+    "tol": 10,
+    "num_classes": 1997
+  },
+  "trap": {
+    "colors": 154,
+    "tol": 10,
+    "num_classes": 1587
+  },
+  "normal_monster": {
+    "colors": 17,
+    "tol": 7,
+    "num_classes": 730
+  },
+  "fusion": {
+    "colors": 127,
+    "tol": 10,
+    "num_classes": 370
+  },
+  "ritual": {
+    "colors": 117,
+    "tol": 7,
+    "num_classes": 95
   },
   "xyz": {
     "colors": [61, 46, 21],
     "tol": 20,
     "num_classes": 417
   },
+  "link": {
+    "colors": [97, 66, 8],
+    "tol": 35,
+    "num_classes": 305
+  },
   "syncro": {
     "colors": [180, 173, 165],
     "tol": 35,
     "num_classes": 341
   },
-  "trap": {
-    "colors": [124, 77, 133],
-    "tol": 35,
-    "num_classes": 1587
-  }
+  "box_min_area": 10000,
+  "box_max_area": 19000,
+  "txt_min_area": 1500,
+  "txt_max_area": 4000,
+  "area_threshold": 5000
 }

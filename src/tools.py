@@ -130,13 +130,19 @@ def get_card_type(roi, card_types, box_artwork, box_txt, configs):
     cv2.drawContours(roi_blurred, [box_artwork], 0, (255, 255, 255), -1)
     cv2.drawContours(roi_blurred, [box_txt], 0, (255, 255, 255), -1)
     roi_blurred = cv2.medianBlur(roi_blurred, 7)
-    roi_hsv = cv2.cvtColor(roi_blurred, cv2.COLOR_BGR2HSV)[:, :, 0]
+    roi_hsv = cv2.cvtColor(roi_blurred, cv2.COLOR_BGR2HSV)[:, :, 0].astype(float)
+
+    rect_mask = np.zeros((roi.shape[0], roi.shape[1]), dtype=np.uint8)
+    cv2.drawContours(rect_mask, [box_artwork], 0, (255, 255, 255), -1)
+    cv2.drawContours(rect_mask, [box_txt], 0, (255, 255, 255), -1)
+
+    roi_hsv[rect_mask == 255] = 360
 
     roi = roi_hsv.reshape((roi.shape[0] * roi.shape[1])).astype(float)
 
     counts = [
         np.isclose(
-            np.array([diff for diff in (roi - configs[card_type]["colors"])]),
+            np.array([(diff + 90) % 180 - 90 if diff < 180 else 180 for diff in (roi - configs[card_type]["colors"])]),
             np.zeros(roi.shape[0]),
             atol=configs[card_type]["tol"]
         ).sum() for card_type in card_types

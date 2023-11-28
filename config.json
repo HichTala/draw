@@ -1,8 +1,8 @@
 {
   "card_types": ["spell", "monster", "normal_monster", "trap", "fusion", "ritual"],
   "monster": {
-    "colors": 6,
-    "tol": 5,
+    "colors": 0,
+    "tol": 11,
     "num_classes": 4602
   },
   "spell": {

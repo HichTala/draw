@@ -47,7 +47,7 @@ def main(args):
         save=False,
         device='0',
         stream=True,
-        verbose=False
+        # verbose=False
     )
 
     fourcc = cv2.VideoWriter_fourcc(*'MJPG')
@@ -123,9 +123,9 @@ def main(args):
                                                         (255, 255, 255),
                                                         2)
 
-                                            print()
-                                            print(classes_dict[card_type][i])
-                                            print("rang: ", k)
+                                            # print()
+                                            # print(classes_dict[card_type][i])
+                                            # print("rang: ", k)
                                             break
                                     cv2.rectangle(image, (x1, y1), (x2, y2), color=(255, 152, 119), thickness=2)
                                     cv2.drawContours(roi, [box_txt], 0, (152, 255, 119), 2)

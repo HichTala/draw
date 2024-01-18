@@ -3,47 +3,32 @@
   "monster": {
     "colors": 0,
     "tol": 11,
-    "num_classes": 4602
+    "num_classes": 1420
   },
   "spell": {
     "colors": 100,
     "tol": 10,
-    "num_classes": 1997
+    "num_classes": 745
   },
   "trap": {
     "colors": 154,
     "tol": 10,
-    "num_classes": 1587
+    "num_classes": 603
   },
   "normal_monster": {
     "colors": 17,
     "tol": 7,
-    "num_classes": 730
+    "num_classes": 464
   },
   "fusion": {
     "colors": 127,
     "tol": 10,
-    "num_classes": 370
+    "num_classes": 141
   },
   "ritual": {
     "colors": 117,
     "tol": 7,
-    "num_classes": 95
-  },
-  "xyz": {
-    "colors": [61, 46, 21],
-    "tol": 20,
-    "num_classes": 417
-  },
-  "link": {
-    "colors": [97, 66, 8],
-    "tol": 35,
-    "num_classes": 305
-  },
-  "syncro": {
-    "colors": [180, 173, 165],
-    "tol": 35,
-    "num_classes": 341
+    "num_classes": 31
   },
   "box_min_area": 10000,
   "box_max_area": 19000,

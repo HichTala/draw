@@ -47,12 +47,18 @@ def main(args):
         save=False,
         device='0',
         stream=True,
-        # verbose=False
+        verbose=False
     )
 
     fourcc = cv2.VideoWriter_fourcc(*'MJPG')
     video_writer = cv2.VideoWriter('filename.avi', fourcc, 60, (1920, 1080))
     frame = -1
+    print("fast forwarding")
+    for _ in results:
+        frame += 1
+        if frame == 2500:
+            break
+    print("starting inference")
     try:
         for result in results:
             frame += 1
@@ -98,7 +104,7 @@ def main(args):
                                         box_txt=box_txt,
                                         configs=configs
                                     )
-
+                                    breakpoint()
                                     input_image = src.tools.pil_loader('./ROI/artwork.png')
                                     input_image = transforms.ToTensor()(input_image)
                                     input_image = transforms.Resize((224, 224), antialias=True)(input_image)
@@ -123,9 +129,9 @@ def main(args):
                                                         (255, 255, 255),
                                                         2)
 
-                                            # print()
-                                            # print(classes_dict[card_type][i])
-                                            # print("rang: ", k)
+                                            print()
+                                            print(classes_dict[card_type][i])
+                                            print("rang: ", k)
                                             break
                                     cv2.rectangle(image, (x1, y1), (x2, y2), color=(255, 152, 119), thickness=2)
                                     cv2.drawContours(roi, [box_txt], 0, (152, 255, 119), 2)

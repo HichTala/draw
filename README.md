@@ -30,6 +30,8 @@ DRAW is entirely open source and all contributions are welcome.
 ---
 ## <div style="text-align: center;">Documentation</div>
 
+In progress - available soon
+
 <details open>
 <summary>Install</summary>
 </details>

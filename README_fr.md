@@ -22,6 +22,8 @@ DRAW est entièrement open source et toutes les contributions sont les bienvenue
 
 ## <div style="text-align: center;">Documentation</div>
 
+En cours - bientôt disponible
+
 <details open>
 <summary>Installation</summary>
 </details>

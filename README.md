@@ -8,9 +8,8 @@
 
 
 [![Licence](https://img.shields.io/github/license/Ileriayo/markdown-badges?style=flat)](LICENSE)
-![Medium](https://img.shields.io/badge/Medium-12100E?style=flat&logo=medium&logoColor=white)
-![PyTorch](https://img.shields.io/badge/PyTorch-%23EE4C2C.svg?style=flat&logo=PyTorch&logoColor=white)
-![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=flat&logo=docker&logoColor=white)
+[![Model on HF](https://huggingface.co/datasets/huggingface/badges/resolve/main/model-on-hf-sm.svg)](https://huggingface.co/HichTala/draw)
+[![Dataset on HF](https://huggingface.co/datasets/huggingface/badges/resolve/main/dataset-on-hf-sm.svg)](https://huggingface.co/datasets/HichTala/yugioh_dataset)
 [![Twitter](https://badgen.net/badge/icon/twitter?icon=twitter&label)](https://twitter.com/tiazden)
 
 [🇫🇷 Français](README_fr.md)
@@ -52,6 +51,8 @@ and the model to be used was determined by the color of the card.
 Models can be downloaded in <a href="https://huggingface.co/HichTala/draw">Hugging Face</a>. 
 Models starting with `beit` stands for classification and the one starting with `yolo` for localization.
 
+[![Model on HF](https://huggingface.co/datasets/huggingface/badges/resolve/main/model-on-hf-sm.svg)](https://huggingface.co/HichTala/draw)
+
 For now only models for "retro" gameplay are available but the ones for classic format play will be added soon.
 I considered "retro" format all cards before the first _syncro_ set, so all the cards edited until Light of Destruction set (LODT - 05/13/2008) set and all speed duel cards.  
 
@@ -65,6 +66,8 @@ one for "retro" play and the other for classic format play. Just as there is a m
 there is a dataset for each type of card.
 
 Dataset can be downloaded in <a href="">Hugging Face</a>.
+
+[![Dataset on HF](https://huggingface.co/datasets/huggingface/badges/resolve/main/dataset-on-hf-sm.svg)](https://huggingface.co/datasets/HichTala/yugioh_dataset)
 
 For now only "retro" dataset is available, but the one for classic format play will be added soon.
 

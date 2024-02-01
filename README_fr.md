@@ -7,9 +7,10 @@
 
 <div>
 
-![Licence](https://img.shields.io/github/license/Ileriayo/markdown-badges?style=flat)
-![Medium](https://img.shields.io/badge/Medium-12100E?style=flat&logo=medium&logoColor=white)
-![PyTorch](https://img.shields.io/badge/PyTorch-%23EE4C2C.svg?style=flat&logo=PyTorch&logoColor=white)
+[![Licence](https://img.shields.io/github/license/Ileriayo/markdown-badges?style=flat)](LICENSE)
+[![Model on HF](https://huggingface.co/datasets/huggingface/badges/resolve/main/model-on-hf-sm.svg)](https://huggingface.co/HichTala/draw)
+[![Dataset on HF](https://huggingface.co/datasets/huggingface/badges/resolve/main/dataset-on-hf-sm.svg)](https://huggingface.co/datasets/HichTala/yugioh_dataset)
+[![Twitter](https://badgen.net/badge/icon/twitter?icon=twitter&label)](https://twitter.com/tiazden)
 
 </div>
 DRAW est le tout premier détecteur d'objets entraîné à détecter les cartes Yu-Gi-Oh! dans tous types d'images, 
@@ -42,7 +43,7 @@ Dans ce projet, les tâches ont été divisées de manière à ce qu'un modèle 
 De même, pour classifier les cartes, j'ai divisé la tâche de manière à ce qu'il y ait un modèle pour chaque type de carte,
 le modèle à utiliser étant déterminé par la couleur de la carte.
 
-Les modèles sont disponible au téléchargement sur <a href="https://huggingface.co/HichTala/draw">Hugging Face</a>. 
+Les modèles sont disponibles au téléchargement sur <a href="https://huggingface.co/HichTala/draw">Hugging Face</a>. 
 Les modèles commençant par `beit` représentent la classification et celui commençant par `yolo` la localisation.
 
 Pour l'instant, seuls les modèles pour le jeu "rétro" sont disponibles, mais ceux pour le format classique seront bientôt ajoutés.
@@ -59,9 +60,11 @@ Pour créer un jeu de données, l'api <a href="https://db.ygoprodeck.com/api-gui
 Deux jeux de données ont ainsi été constitué, l'un pour le jeu "rétro" et l'autre pour le jeu au format classique.
 De la même manière qu'il y a un modèle par type de cartes, il y a un jeu de données par type de cartes.
 
-Les jeux de données sont disponible au téléchargement sur <a href="https://huggingface.co/datasets/HichTala/yugioh_dataset">Hugging Face</a>.
+Les jeux de données sont disponibles au téléchargement sur <a href="https://huggingface.co/datasets/HichTala/yugioh_dataset">Hugging Face</a>.
 
-Pour l'instant, seul les jeux de données "rétro" sont disponible, mais ceux pour le format classique seront bientôt ajoutés.
+[![Dataset on HF](https://huggingface.co/datasets/huggingface/badges/resolve/main/dataset-on-hf-sm.svg)](https://huggingface.co/datasets/HichTala/yugioh_dataset)
+
+Pour l'instant, seuls les jeux de données "rétro" sont disponibles, mais ceux pour le format classique seront bientôt ajoutés.
 
 </details>
 
@@ -93,14 +96,14 @@ De plus, elle n'est pas intégrable, la seule et unique façon de l'utiliser est
 
 [yugioh one shot learning](https://github.com/vanstorm9/yugioh-one-shot-learning) fait par `vanstorm9` est un   
 programme de classification des cartes Yu-Gi-Oh!. Il utilise un réseau de neurones siamois pour entraîner son modèle.
-Il donne des résultats très impressionnants sur des images de bonne qualité mais pas très bons sur des images de moins bonnes qualité,
+Il donne des résultats très impressionnants sur des images de bonne qualité, mais pas très bons sur des images de moins bonne qualité,
 et il ne peut pas localiser les cartes.
 
 [Yolov8](https://github.com/ultralytics/ultralytics) est la dernière version de la très célèbre famille `yolo` de modèles de détection d'objets.
 Est-il vraiment nécessaire de le présenter aujourd'hui ? Il représente l'état de l'art en matière de modèle de détection d'objets en temps réel.
 
 [BEiT](https://arxiv.org/pdf/2106.08254.pdf) est un modèle pré-entraîné de classification d'images. Il utilise des _image transformers_ 
-qui sont basés sur le mécanisme d'attention. Il convient à notre problème car les auteurs proposent également un modèle pré-entraîné dans `Imagenet-22K`.
+qui sont basés sur le mécanisme d'attention. Il convient à notre problème, car les auteurs proposent également un modèle pré-entraîné dans `Imagenet-22K`.
 Il s'agit d'un jeu de données avec 22k classes (plus que la plupart des classifieurs) ce qui est intéressant dans notre cas puisqu'il y a plus de 11k cartes dans _Yu-Gi-Oh!_.
 
 ---

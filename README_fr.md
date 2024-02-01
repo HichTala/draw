@@ -16,7 +16,7 @@
 DRAW est le tout premier détecteur d'objets entraîné à détecter les cartes Yu-Gi-Oh! dans tous types d'images, 
 et en particulier dans les images de duels.
 
-D'autres travaux existent (voir ...) mais aucun n'est capable de reconnaître des cartes pendant un duel.
+D'autres travaux existent (voir [Projet connexes](#div-aligncenterprojets-connexesdiv)) mais aucun n'est capable de reconnaître des cartes pendant un duel.
 
 DRAW est entièrement open source et toutes les contributions sont les bienvenues.
 </div>

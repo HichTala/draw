@@ -1,27 +1,115 @@
-# DRAW - Detecting and Recognizing a Wild Range of cards
+
+<div style="text-align: center;">
+    <p>
+        <img src="figures/banner-draw.png">
+    </p>
+
+
+<div>
+
+
+[![Licence](https://img.shields.io/github/license/Ileriayo/markdown-badges?style=flat)](LICENSE)
+![Medium](https://img.shields.io/badge/Medium-12100E?style=flat&logo=medium&logoColor=white)
+![PyTorch](https://img.shields.io/badge/PyTorch-%23EE4C2C.svg?style=flat&logo=PyTorch&logoColor=white)
+![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=flat&logo=docker&logoColor=white)
+[![Twitter](https://badgen.net/badge/icon/twitter?icon=twitter&label)](https://twitter.com/tiazden)
+
+[🇫🇷 Français](README_fr.md)
+
+DRAW (which stands for **D**etect and **R**ecognize **A** **W**ild range of cards) is the very first object detector
+trained to detect _Yu-Gi-Oh!_ cards in all types of images, and in particular in dueling images.
+
+Other works exist (see ...) but none is capable of recognizing cards during a duel.
+
+DRAW is entirely open source and all contributions are welcome.
+
+</div>
+
+</div>
 
 ---
+## <div style="text-align: center;">Documentation</div>
 
-Ce détecteur utilise l'apprentissage profond pour détecter et classifier une carte Yu-Gi6oh! parmis les 11k+ existantes. 
+<details open>
+<summary>Install</summary>
+</details>
 
-Ce projet fait suite à celui de SuperZouloux (lien de la vidéo)
-
-L'idée est de pouvoir remplacer les puces dans les sleeves qui sont assez contraignante et pouvoir ainsi reconnaire 
-et localiser chaque carte 
-
----
-## Overview de la méthode
-
-Il est assez inanvisageable d'entrainer un detecteur directement sur l'ensemble des 11k+ cartes.
-Ainsi il convient de séparer la tâche en plusieurs sous tâches. 
-
-Dans un premier temps il s'agit de localiser la carte c'est ce que nous appèlerons la regression. Pour cela un des 
-framworks les plus populaires et les plus performant à l'heure actuelle est le Yolo dans sa version la plus récente c'est-à-dire la version 8
-développer par ultralytics.
-Ainsi un jeu de donnée à été former et annoté à la main pour permettre l'entrainement du modèle
-
-La deuxième tâche est ensuite la classification. Pour cela un classifier donnant de très bon résultat sur de grosse base de données à été
-privilégié. Le Beit à été utiliser. Le transfert learning a permis de l'entrainer sur une plus petite base de donéne
+<details open>
+<summary>Usage</summary>
+</details>
 
 ---
+## <div style="text-align: center;">Models and Data</div>
 
+<details open>
+<summary>Models</summary>
+
+In this project, the tasks were divided so that one model would locate the card and another model would classify them. 
+Similarly, to classify the cards, I divided the task so that there is one model for each type of card,
+and the model to be used was determined by the color of the card.
+
+Models can be downloaded in <a href="https://huggingface.co/HichTala/draw">Hugging Face</a>. 
+Models starting with `beit` stands for classification and the one starting with `yolo` for localization.
+
+For now only models for "retro" gameplay are available but the ones for classic format play will be added soon.
+I considered "retro" format all cards before the first _syncro_ set, so all the cards edited until Light of Destruction set (LODT - 05/13/2008) set and all speed duel cards.  
+
+</details>
+
+<details open>
+<summary>Data</summary>
+
+To create a dataset, the <a href="https://db.ygoprodeck.com/api-guide-v2/">YGOPRODeck</a> api was used. Two datasets were thus created, 
+one for "retro" play and the other for classic format play. Just as there is a model for each type of card,
+there is a dataset for each type of card.
+
+Dataset can be downloaded in <a href="">Hugging Face</a>.
+
+For now only "retro" dataset is available, but the one for classic format play will be added soon.
+
+
+</details>
+
+---
+## <div style="text-align: center;">Inspiration</div>
+
+This project is inspired by content creator [SuperZouloux](https://www.youtube.com/watch?v=64-LfbggqKI)'s idea of a hologram bringing _Yu-Gi-Oh!_ cards to life. 
+His project uses chips inserted under the sleeves of each card, 
+which are read by the play mat, enabling the cards to be recognized.
+
+Inserting the chips into the sleeves is not only laborious, but also poses another problem: 
+face-down cards are read in the same way as face-up ones. 
+So an automatic detector is a really suitable solution.
+
+Although this project was discouraged by _KONAMI_ <sup>®</sup>, the game's publisher (which is quite understandable),
+we can nevertheless imagine such a system being used to display the cards played during a live duel, 
+to allow spectators to read the cards.
+
+---
+## <div style="text-align: center;">Related Works</div>
+
+Although to my knowledge `draw` is the first detector capable of locating and detecting _Yu-Gi-Oh!_ cards in a dueling environment, 
+other works exist and were a source of inspiration for this project. It's worth mentioning them here.
+
+[Yu-Gi-Oh! NEURON](https://www.konami.com/games/eu/fr/products/yugioh_neuron/) is an official application developed by _KONAMI_ <sup>®</sup>.
+It's packed with features, including cards recognition. The application is capable of recognizing a total of 20 cards at a time, which is very decent. 
+The drawback is that the cards must be of good quality to be recognized, which is not necessarily the case in a duel context. 
+What's more, it can't be integrated, so the only way to use it is to use the application.
+
+[yugioh one shot learning](https://github.com/vanstorm9/yugioh-one-shot-learning) made by `vanstorm9` is a 
+Yu-Gi-Oh! cards classification program that allow you to recognize cards. It uses siamese network to train its classification
+model. It gives very impressive results on images with a good quality but not that good on low quality images, and it 
+can't localize cards.
+
+[Yolov8](https://github.com/ultralytics/ultralytics) is the last version of the very famous `yolo` family of object detector models.
+I think it doesn't need to be presented today, it represents state-of-the-art real time object detection model.
+
+[BEiT](https://arxiv.org/pdf/2106.08254.pdf) is a pre-trained model for image classification. It uses image transofrmers 
+which are based on attention mechanism. It suits our problem because authors also propose a pre-trained model in `Imagenet-22K`.
+It is a dataset with 22k classes (more than most classifiers) which is interesting for our case since there is mode than 11k cards in _Yu-Gi-Oh!_. 
+
+---
+## <div style="text-align: center;">Method Overview</div>
+
+A medium blog will soon be written and published, explaining the main process from data collection to final prediction.
+If you have any questions, don't hesitate to open an issue.

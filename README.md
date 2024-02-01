@@ -26,7 +26,7 @@ DRAW is entirely open source and all contributions are welcome.
 </div>
 
 ---
-## <div align="center">Documentation</div>
+## <div align="center">📄Documentation</div>
 
 In progress - available soon
 
@@ -39,7 +39,7 @@ In progress - available soon
 </details>
 
 ---
-## <div align="center">Models and Data</div>
+## <div align="center">⚙️Models and Data</div>
 
 <details open>
 <summary>Models</summary>
@@ -75,7 +75,7 @@ For now only "retro" dataset is available, but the one for classic format play w
 </details>
 
 ---
-## <div align="center">Inspiration</div>
+## <div align="center">💡Inspiration</div>
 
 This project is inspired by content creator [SuperZouloux](https://www.youtube.com/watch?v=64-LfbggqKI)'s idea of a hologram bringing _Yu-Gi-Oh!_ cards to life. 
 His project uses chips inserted under the sleeves of each card, 
@@ -90,7 +90,7 @@ we can nevertheless imagine such a system being used to display the cards played
 to allow spectators to read the cards.
 
 ---
-## <div align="center">Related Works</div>
+## <div align="center">🔗Related Works</div>
 
 Although to my knowledge `draw` is the first detector capable of locating and detecting _Yu-Gi-Oh!_ cards in a dueling environment, 
 other works exist and were a source of inspiration for this project. It's worth mentioning them here.
@@ -113,7 +113,7 @@ which are based on attention mechanism. It suits our problem because authors als
 It is a dataset with 22k classes (more than most classifiers) which is interesting for our case since there is mode than 11k cards in _Yu-Gi-Oh!_. 
 
 ---
-## <div align="center">Method Overview</div>
+## <div align="center">🔍Method Overview</div>
 
 A medium blog will soon be written and published, explaining the main process from data collection to final prediction.
 If you have any questions, don't hesitate to open an issue.

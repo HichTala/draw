@@ -21,7 +21,7 @@ D'autres travaux existent (voir ...) mais aucun n'est capable de reconnaître de
 DRAW est entièrement open source et toutes les contributions sont les bienvenues.
 </div>
 
-## <div align="center">Documentation</div>
+## <div align="center">📄Documentation</div>
 
 En cours - bientôt disponible
 
@@ -34,7 +34,7 @@ En cours - bientôt disponible
 </details>
 
 ---
-## <div align="center">Modèles and Données</div>
+## <div align="center">⚙️Modèles and Données</div>
 
 <details open>
 <summary>Modèles</summary>
@@ -69,7 +69,7 @@ Pour l'instant, seuls les jeux de données "rétro" sont disponibles, mais ceux 
 </details>
 
 ---
-## <div align="center">Inspiration</div>
+## <div align="center">💡Inspiration</div>
 
 Ce projet a été inspiré par un projet du créateur [SuperZouloux](https://www.youtube.com/watch?v=64-LfbggqKI) 
 donnant vie aux cartes _Yu-Gi-Oh!_ à l'aide d'un hologramme. Son projet utilise des puces insérées sous les protections
@@ -84,7 +84,7 @@ on peut néanmoins imaginer un tel système pour afficher les cartes jouées lor
 pour permettre aux spectateurs de lire les cartes.
 
 ---
-## <div align="center">Projets connexes</div>
+## <div align="center">🔗Projets connexes</div>
 
 Bien qu'à ma connaissance `draw` soit le premier détecteur capable de localiser et de détecter des cartes _Yu-Gi-Oh!_ dans un environnement de duel, 
 d'autres travaux existent et ont été une source d'inspiration pour ce projet. Il convient donc de les mentionner proprement.
@@ -107,7 +107,7 @@ qui sont basés sur le mécanisme d'attention. Il convient à notre problème, c
 Il s'agit d'un jeu de données avec 22k classes (plus que la plupart des classifieurs) ce qui est intéressant dans notre cas puisqu'il y a plus de 11k cartes dans _Yu-Gi-Oh!_.
 
 ---
-## <div align="center">Aperçu de la méthode</div>
+## <div align="center">🔍Aperçu de la méthode</div>
 
 Un blog medium sera bientôt rédigé et publié, expliquant le processus principal, de la collecte des données à la prédiction finale. 
 Si vous avez des questions, n'hésitez pas à ouvrir une issue.

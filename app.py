@@ -12,11 +12,7 @@ from flask import Flask, render_template, request, flash, redirect, url_for, sen
 app = Flask(__name__, template_folder='template', static_folder='static')
 socketio = SocketIO(app)
 
-config = {
-    'source': './temp/source.mp4',
-    'deck_list': './temp/deck_list.ydk',
-    'data_path': './club_yugioh_dataset'
-}
+config = {}
 
 real_time = True
 draw_model = None
@@ -32,6 +28,9 @@ def index():
         real_time = len(request.form.getlist('real_time')) == 1
 
         if deck_list:
+            if not os.path.exists('./temp'):
+                os.makedirs('./temp')
+
             target_src = '0'
             if source:
                 print(request.files)

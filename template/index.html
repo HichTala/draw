@@ -12,6 +12,10 @@
         <div class="row">
           <h4>DRAW - Detecting and Recognizing A Wild range of Cards</h4>
           <div class="input-group input-group-icon">
+            <input class="config" type="file" name="config" value="{{request.form['config']}}"/>
+            <div class="input-icon"><i class="fa fa-gears"></i></div>
+          </div>
+          <div class="input-group input-group-icon">
             <input class="source" type="file" name="source" value="{{request.form['source']}}"/>
             <div class="input-icon"><i class="fa fa-camera"></i></div>
           </div>

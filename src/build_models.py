@@ -32,7 +32,7 @@ def build_classification(card_types, configs, data_path, deck_list):
             init_values=0.1,
         )
 
-        checkpoint = torch.load(f'./trained_models/beit_ygo_{card_type}.pth')
+        checkpoint = torch.load(os.path.join(configs['trained_models'], f'beit_ygo_{card_type}.pth'))
         model_classification_dict[card_type] = load_beit_model(model_classification_dict[card_type], checkpoint)
 
         card_type_data_path = os.path.join(data_path, card_type)

@@ -1,4 +1,6 @@
 {
+  "trained_models": "",
+  "data_path": "",
   "card_types": ["spell", "monster", "normal_monster", "trap", "fusion", "ritual"],
   "monster": {
     "colors": 0,
@@ -11,8 +13,8 @@
     "num_classes": 745
   },
   "trap": {
-    "colors": 154,
-    "tol": 10,
+    "colors": 135,
+    "tol": 7,
     "num_classes": 603
   },
   "normal_monster": {

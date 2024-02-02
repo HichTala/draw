@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href='../static/style.css' />
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>DRAW</title>
+</head>
+<body>
+    <div class="container">
+      <form method="post" enctype="multipart/form-data" >
+        <div class="row">
+          <h4>DRAW - Detecting and Recognizing A Wild range of Cards</h4>
+          <div class="input-group input-group-icon">
+            <input class="source" type="file" name="source" value="{{request.form['source']}}"/>
+            <div class="input-icon"><i class="fa fa-camera"></i></div>
+          </div>
+          <div class="input-group input-group-icon">
+            <input class="deck_list" type="file" name="deck_list" value="{{request.form['deck_list']}}"/>
+            <div class="input-icon"><i class="fa fa-list"></i></div>
+          </div>
+          <div class="input-group">
+              <input id="terms" type="checkbox" name="real_time" value="so_2_my_grd_mom"/>
+              <label for="terms">Affichage en temps réel (beta)</label>
+          </div>
+        </div>
+        <button type="submit" class="submit">ZZZ'est parti !</button>
+      </form>
+    </div>
+</body>
+</html>

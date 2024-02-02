@@ -1,6 +1,7 @@
 import cv2
 import numpy as np
 from PIL import Image
+from torchvision.transforms import transforms
 
 
 def get_edges(num_edge, coordinates):
@@ -65,6 +66,15 @@ def pil_loader(path):
     with open(path, 'rb') as f:
         img = Image.open(f)
         return img.convert('RGB')
+
+
+def build_transform():
+    return transforms.Compose([
+        transforms.Resize(256, interpolation=3),
+        transforms.CenterCrop((224, 224)),
+        transforms.ToTensor(),
+        transforms.Normalize(mean=[0.5, 0.5, 0.5], std=[0.5, 0.5, 0.5])
+    ])
 
 
 def clean_deck_list(deck_list, card_type, classes):

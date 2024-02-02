@@ -1,29 +1,12 @@
-import argparse
 import json
 import os
 
 import cv2
 import numpy as np
 import torch
-from torchvision.transforms import transforms
 
 import src.tools
 from src.build_models import build_regression, build_classification
-
-
-def parse_command_line():
-    parser = argparse.ArgumentParser('Yu-Gi-Oh! DRAW parser', add_help=True)
-
-    parser.add_argument('--yolo-path', default='./trained_models/yolo_ygo.pt', type=str,
-                        help="Path to trained yolo model")
-    parser.add_argument('--source', default='', type=str,
-                        help="Path to source video")
-    parser.add_argument('--deck-list', default='', type=str,
-                        help="Path to deck list file")
-    parser.add_argument('--data-path', default='./cardDatabaseFormatted', type=str,
-                        help="Path to formatted data base")
-
-    return parser.parse_args()
 
 
 class Draw:

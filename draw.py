@@ -33,20 +33,23 @@ class Draw:
         with open(deck_list) as f:
             self.deck_list = [line.rstrip() for line in f.readlines()]
 
+        device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+
         self.card_types = self.configs['card_types']
         model_regression = build_regression(os.path.join(self.configs['trained_models'], 'yolo_ygo.pt'))
         self.model_classification_dict, self.classes_dict, self.deck_card_ids = build_classification(
             card_types=self.card_types,
             configs=self.configs,
             data_path=self.configs['data_path'],
-            deck_list=self.deck_list
+            deck_list=self.deck_list,
+            device=device
         )
 
         self.results = model_regression(
             source=source,
             show_labels=False,
             save=False,
-            device='cuda',
+            device=device,
             stream=True,
             verbose=False
         )

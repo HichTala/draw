@@ -13,7 +13,7 @@ def build_regression(yolo_path):
     return YOLO(yolo_path)
 
 
-def build_classification(card_types, configs, data_path, deck_list):
+def build_classification(card_types, configs, data_path, deck_list, device):
     model_classification_dict = {}
     classes_dict = {}
     deck_card_ids = {}
@@ -33,7 +33,7 @@ def build_classification(card_types, configs, data_path, deck_list):
         )
 
         checkpoint = torch.load(os.path.join(configs['trained_models'], f'beit_ygo_{card_type}.pth'))
-        model_classification_dict[card_type] = load_beit_model(model_classification_dict[card_type], checkpoint)
+        model_classification_dict[card_type] = load_beit_model(model_classification_dict[card_type], checkpoint, device)
 
         card_type_data_path = os.path.join(data_path, card_type)
         classes = [d.name for d in os.scandir(card_type_data_path) if d.is_dir()]
@@ -45,7 +45,7 @@ def build_classification(card_types, configs, data_path, deck_list):
     return model_classification_dict, classes_dict, deck_card_ids
 
 
-def load_beit_model(model, checkpoint):
+def load_beit_model(model, checkpoint, device):
     checkpoint_model = None
     for model_key in ['model', 'module']:
         if model_key in checkpoint:
@@ -153,7 +153,7 @@ def load_beit_model(model, checkpoint):
     load_state_dict(model, checkpoint_model)
     # model.load_state_dict(checkpoint_model, strict=False)
 
-    return model.to('cuda')
+    return model.to(device)
 
 
 def load_state_dict(model, state_dict, prefix='', ignore_missing="relative_position_index"):

@@ -16,21 +16,104 @@
 DRAW est le tout premier détecteur d'objets entraîné à détecter les cartes Yu-Gi-Oh! dans tous types d'images, 
 et en particulier dans les images de duels.
 
-D'autres travaux existent (voir [Projet connexes](#div-aligncenterprojets-connexesdiv)) mais aucun n'est capable de reconnaître des cartes pendant un duel.
+D'autres travaux existent (voir [Projets connexes](#div-aligncenterprojets-connexesdiv)) mais aucun n'est capable de reconnaître des cartes pendant un duel.
 
 DRAW est entièrement open source et toutes les contributions sont les bienvenues.
 </div>
 
 ## <div align="center">📄Documentation</div>
 
-En cours - bientôt disponible
-
 <details open>
-<summary>Installation</summary>
+<summary>
+Installer
+</summary>
+
+Une installation docker et une installation plus conventionnelle sont toutes deux disponibles. 
+Si vous n'êtes pas très familier avec tout ce qui est code, l'installation docker est recommandée. 
+Sinon, optez pour l'installation classique.
+
+#### Installation Docker
+
+Si vous êtes familier avec Docker, l'image Docker est disponible [ici](https://hub.docker.com/r/hichtala/draw).
+
+Sinon, je vous recommande de télécharger [DockerDesktop](https://www.docker.com/products/docker-desktop/) si vous êtes sous Windows.
+Si vous êtes sous Linux, vous pouvez vous référer à la documentation [ici](https://docs.docker.com/engine/install/).
+
+Une fois que c'est fait, il vous suffit d'exécuter la commande suivante,
+```shell
+docker run -p 5000:5000 --name draw hichtala/draw:latest
+```
+Votre installation est maintenant terminée. Vous pouvez appuyer sur `Ctrl+C` et passer à la section Usage.
+
+
+#### Installation classique
+
+Vous avez besoin d'installer Python. L'installation de Python ne sera pas détaillée ici, vous pouvez vous référer à la [documentation](https://www.python.org/).
+
+Nous devons d'abord installer pytorch. Il est recommandé d'utiliser un gestionnaire de paquets tel que [miniconda](https://docs.conda.io/projects/miniconda/en/latest/). 
+Veuillez vous référer à la [documentation](https://docs.conda.io/projects/miniconda/en/latest/).
+
+Lorsque tout est prêt, vous pouvez lancer la commande suivante pour installer pytorch :
+```shell
+python -m pip install torch torchvision
+```
+Si vous voulez utiliser votre gpus pour faire tourner le tout plus rapidement, veuillez vous référer à la [documentation](https://pytorch.org/get-started/locally/).
+
+Ensuite, il vous suffit de cloner le repo et d'installer les `requirements`:
+```Shell
+git clone https://github.com/HichTala/draw
+cd draw
+python -m pip install -r requirements.txt
+```
+
+Votre installation est maintenant terminée.
+
 </details>
 
 <details open>
-<summary>Usage</summary>
+<summary>Utilisation</summary>
+
+Maintenant pour l'utiliser vous devez télécharger les modèles et les données, dans la section [Modèles et données](#div-aligncentermodèles-and-donnéesdiv)
+Mettez tous les modèles dans le même dossier, et gardez le jeu de données tel qu'il est.
+
+Une fois que vous les avez, suivez les instructions selon que vous avez une installation docker ou classique.
+
+
+#### Installation Docker
+
+Vous devez copier les données et les modèles dans le conteneur. Exécutez la commande suivante:
+
+```shell
+docker cp path/to/dataset/club_yugioh_dataset draw:/data
+docker cp path/to/model/folder draw:/models
+```
+
+Une fois que c'est fait, vous n'avez plus qu'à lancer la commande :
+```shell
+docker start draw
+```
+ouvrir l'adresse `localhost:5000`, et profiter au maximum. Voir [ci-dessous](#) pour plus de détails sur les paramètres.
+
+
+#### Installation classique
+
+Vous devez modifier le fichier `config.json` en mettant les chemins de votre dossiers de données dans le paramètre `"data_path"` 
+et le chemin du dossier des modèles dans le paramètre `"trained_models"`.
+
+Une fois que c'est fait, il suffit de lancer
+```shell
+flask --app app.py run
+```
+ouvrez l'adresse `localhost:5000`, et profiter au maximum. Référez-vous à [ci-dessous](#) pour plus de détails sur les paramètres.
+
+#### Les deux
+
+* Dans le premier paramètre, celui avec les engrenages, mettez le fichier `config.json`.
+* Dans le second paramètre, celui avec une caméra, mettez la vidéo que vous voulez traiter (laissez-le vide pour utiliser votre webcam)
+* Dans le dernier paramètre, mettez la liste de votre deck au format `ydk`.
+
+Vous pouvez ensuite appuyer sur le bouton et lancer le processus !
+
 </details>
 
 ---

@@ -28,14 +28,95 @@ DRAW is entirely open source and all contributions are welcome.
 ---
 ## <div align="center">📄Documentation</div>
 
-In progress - available soon
+<details>
+<summary>
+Install
+</summary>
 
-<details open>
-<summary>Install</summary>
+Both a docker installation and a more conventional installation are available. If you're not very familiar with all the code, 
+docker installation is recommended. Otherwise, opt for the classic installation.
+
+#### Docker installation
+
+If you are familiar with docker, the docker image is available [here](https://hub.docker.com/r/hichtala/draw).
+
+Otherwise, I recommend you to download [DockerDesktop](https://www.docker.com/products/docker-desktop/) if you are on Windows.
+If you are on Linux, you can refer to the documentation [here](https://docs.docker.com/engine/install/).
+
+Once it is done, you simply have to execute the following command,
+```shell
+docker run -p 5000:5000 --name draw hichtala/draw:latest
+```
+Your installation is now completed. You can press `Ctrl+C` and continue to Usage section.
+
+
+#### Classic installation
+
+You need python to be installed. Python installation isn't going to be detailed here, you can refer to the [documentation](https://www.python.org/).
+
+We first need to install pytorch. It is recommended to use a package manager such as [miniconda](https://docs.conda.io/projects/miniconda/en/latest/). 
+Please refer to the [documentation](https://docs.conda.io/projects/miniconda/en/latest/).
+
+When everything is set up you can run the following command to install pytorch:
+```shell
+python -m pip install torch torchvision
+```
+If you want to use you gpus to make everything run faster, please refer the [documentation](https://pytorch.org/get-started/locally/)
+
+Then you just have to clone the repo and install `requirements`:
+```shell
+git clone https://github.com/HichTala/draw
+cd draw
+python -m pip install -r requirements.txt
+```
+
+Your installation is now completed.
+
 </details>
 
-<details open>
+<details>
 <summary>Usage</summary>
+
+Now to use it you need to download the models and the data, in section [Models and Data](#div-aligncentermodels-and-datadiv).
+
+Once you have it, follow instruction depending on you have docker or classic installation.
+Put all the model in the same folder, and keep the dataset as it is
+
+#### Docker installation
+
+You have to copy the data and models in the container. Execute the following command:
+
+```shell
+docker cp path/to/dataset/club_yugioh_dataset draw:/data
+docker cp path/to/model/folder draw:/models
+```
+
+Once it is done you just have to run the command:
+```shell
+docker start draw
+```
+open the adress `localhost:5000`, and enjoy the maximum. Refer [bellow](#both) for details about parameters
+
+
+#### Classic installation
+
+You need to modify the `config.json` file by putting the paths of you dataset folder in `"data_path"` parameter 
+and the path to model folder in `"trained_models"` parameter.
+
+Once done, just run:
+```shell
+flask --app app.py run
+```
+open the adress `localhost:5000`, and enjoy the maximum. Refer [bellow](#both) for details about parameters
+
+#### Both
+
+* In the first parameter, the one with gears, put the `config.json` file
+* In the second parameter, the one with a camera, put the video you want to process (leave it empty to use your webcam)
+* In the last one, put your deck list in the format `ydk`
+
+Then you can press the button and start the process !
+
 </details>
 
 ---
@@ -73,6 +154,7 @@ For now only "retro" dataset is available, but the one for classic format play w
 
 
 </details>
+
 
 ---
 ## <div align="center">💡Inspiration</div>

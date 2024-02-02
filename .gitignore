@@ -1,7 +1,7 @@
-/trained_models/
-/cardDatabaseFormatted/
 /.idea/
-/ROI/
+/trained_models/
+/club_yugioh_dataset/
+/temp/
 *.mp4
 *.avi
 *.ydk

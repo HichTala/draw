@@ -10,8 +10,8 @@ from src.build_models import build_regression, build_classification
 
 
 class Draw:
-    def __init__(self, deck_list, source):
-        with open("config.json", "rb") as f:
+    def __init__(self, config, deck_list, source):
+        with open(config, "rb") as f:
             self.configs = json.load(f)
         with open(deck_list) as f:
             self.deck_list = [line.rstrip() for line in f.readlines()]

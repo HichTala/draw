@@ -23,27 +23,30 @@ def index():
     if request.method == 'POST':
         source = request.files['source']
         deck_list = request.files['deck_list']
+        config_file = request.files['config']
 
         global real_time
         real_time = len(request.form.getlist('real_time')) == 1
 
-        if deck_list:
+        if deck_list and config_file:
             if not os.path.exists('./temp'):
                 os.makedirs('./temp')
 
             target_src = '0'
             if source:
-                print(request.files)
                 video_format = request.files['source'].filename.split('.')[-1]
                 target_src = os.path.join('temp', 'source.' + video_format)
                 source.save(target_src)
 
             target_dl = os.path.join('temp', 'deck_list.ydk')
-
             deck_list.save(target_dl)
+
+            target_config = os.path.join('temp', 'config.json')
+            config_file.save(target_config)
 
             config['source'] = target_src
             config['deck_list'] = target_dl
+            config['config'] = target_config
 
             return redirect(url_for('main'))
     return render_template("index.html")
@@ -53,7 +56,7 @@ def index():
 def main():
     if real_time:
         global draw_model
-        draw_model = draw.Draw(source=config['source'], deck_list=config['deck_list'])
+        draw_model = draw.Draw(config=config['config'], source=config['source'], deck_list=config['deck_list'])
         return render_template('real_time.html')
     else:
         return render_template('main.html')
@@ -74,7 +77,7 @@ def video_feed():
 @socketio.on('start_processing')
 def start_processing():
     global draw_model
-    draw_model = draw.Draw(source=config['source'], deck_list=config['deck_list'])
+    draw_model = draw.Draw(config=config['config'], source=config['source'], deck_list=config['deck_list'])
     config['data_path'] = draw_model.configs['data_path']
     cards_display(draw_model)
 
@@ -122,13 +125,6 @@ def cards_display(draw_model):
                     count[key] = 0
     else:
         fast_forwarding = 0
-        frame = -1
-        print("fast forwarding")
-        for _ in draw_model.results:
-            frame += 1
-            if frame == 2500:
-                break
-        print("starting inference")
         for result in draw_model.results:
             if emited:
                 fast_forwarding += 1

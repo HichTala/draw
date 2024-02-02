@@ -30,7 +30,7 @@ DRAW is entirely open source and all contributions are welcome.
 ---
 ## <div align="center">📄Documentation</div>
 
-<details>
+<details open>
 <summary>
 Install
 </summary>
@@ -76,7 +76,7 @@ Your installation is now completed.
 
 </details>
 
-<details>
+<details open>
 <summary>Usage</summary>
 
 Now to use it you need to download the models and the data, in section [Models and Data](#div-aligncentermodels-and-datadiv).

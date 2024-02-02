@@ -2,6 +2,7 @@
 /trained_models/
 /club_yugioh_dataset/
 /temp/
+/ROI/
 *.mp4
 *.avi
 *.ydk

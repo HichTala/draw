@@ -1,6 +1,6 @@
 {
-  "trained_models": "/home/hicham/Documents/draw/trained_models/",
-  "data_path": "/home/hicham/Documents/draw/club_ygo_dataset/",
+  "trained_models": "/models",
+  "data_path": "/data",
   "card_types": ["spell", "monster", "normal_monster", "trap", "fusion", "ritual"],
   "monster": {
     "colors": 0,

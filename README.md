@@ -203,7 +203,7 @@ A medium blog will soon be written and published, explaining the main process fr
 If you have any questions, don't hesitate to open an issue.
 
 ---
-## <div align="center">📧Contact</div>
+## <div align="center">💬Contact</div>
 
 You can reach me on Twitter [@tizaden](https://twitter.com/tiazden) or by email at [hich.tala.phd@gmail.com](mailto:hich.tala.phd@gmail.com).
 

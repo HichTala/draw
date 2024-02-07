@@ -144,7 +144,7 @@ I considered "retro" format all cards before the first _syncro_ set, so all the 
 <details open>
 <summary>Data</summary>
 
-To create a dataset, the <a href="https://db.ygoprodeck.com/api-guide-v2/">YGOPRODeck</a> api was used. Two datasets were thus created, 
+To create a dataset, the <a href="https://ygoprodeck.com/api-guide/">YGOPRODeck</a> api was used. Two datasets were thus created, 
 one for "retro" play and the other for classic format play. Just as there is a model for each type of card,
 there is a dataset for each type of card.
 

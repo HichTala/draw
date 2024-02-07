@@ -8,7 +8,7 @@
 
 
 [![Licence](https://img.shields.io/github/license/Ileriayo/markdown-badges?style=flat)](LICENSE)
-[![Docker Pulls](https://img.shields.io/docker/pulls/hichtala/draw)](https://hub.docker.com/r/trueosiris/godaddypy/)
+[![Docker Pulls](https://img.shields.io/docker/pulls/hichtala/draw?logo=docker)](https://hub.docker.com/r/hichtala/draw/)
 [![Twitter](https://badgen.net/badge/icon/twitter?icon=twitter&label)](https://twitter.com/tiazden)
 
 [![Model on HF](https://huggingface.co/datasets/huggingface/badges/resolve/main/model-on-hf-sm.svg)](https://huggingface.co/HichTala/draw)
@@ -144,7 +144,7 @@ I considered "retro" format all cards before the first _syncro_ set, so all the 
 <details open>
 <summary>Data</summary>
 
-To create a dataset, the <a href="https://db.ygoprodeck.com/api-guide-v2/">YGOPRODeck</a> api was used. Two datasets were thus created, 
+To create a dataset, the <a href="https://ygoprodeck.com/api-guide/">YGOPRODeck</a> api was used. Two datasets were thus created, 
 one for "retro" play and the other for classic format play. Just as there is a model for each type of card,
 there is a dataset for each type of card.
 
@@ -201,3 +201,9 @@ It is a dataset with 22k classes (more than most classifiers) which is interesti
 
 A medium blog will soon be written and published, explaining the main process from data collection to final prediction.
 If you have any questions, don't hesitate to open an issue.
+
+---
+## <div align="center">💬Contact</div>
+
+You can reach me on Twitter [@tizaden](https://twitter.com/tiazden) or by email at [hich.tala.phd@gmail.com](mailto:hich.tala.phd@gmail.com).
+

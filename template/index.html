@@ -24,11 +24,15 @@
             <div class="input-icon"><i class="fa fa-list"></i></div>
           </div>
           <div class="input-group">
-              <input id="terms" type="checkbox" name="real_time" value="so_2_my_grd_mom"/>
-              <label for="terms">Affichage en temps réel (beta)</label>
+              <input id="rt" type="checkbox" name="real_time" value="so_2_my_grd_mom"/>
+              <label for="rt">Affichage en temps réel (beta)</label>
+          </div>
+          <div class="input-group">
+              <input id="debug" type="checkbox" name="debug" value="zoul_jtm"/>
+              <label for="debug">Debogage</label>
           </div>
         </div>
-        <button type="submit" class="submit">ZZZ'est parti !</button>
+        <button type="submit" class="submit" onclick="this.form.submit(); this.disabled=true; this.value='Sending…';">ZZZ'est parti !</button>
       </form>
     </div>
 </body>

@@ -14,7 +14,8 @@ socketio = SocketIO(app)
 
 config = {}
 
-real_time = True
+real_time = False
+debug = False
 draw_model = None
 
 
@@ -27,6 +28,9 @@ def index():
 
         global real_time
         real_time = len(request.form.getlist('real_time')) == 1
+
+        global debug
+        debug = len(request.form.getlist('debug')) == 1
 
         if deck_list and config_file:
             if not os.path.exists('./temp'):
@@ -56,7 +60,12 @@ def index():
 def main():
     if real_time:
         global draw_model
-        draw_model = draw.Draw(config=config['config'], source=config['source'], deck_list=config['deck_list'])
+        draw_model = draw.Draw(
+            config=config['config'],
+            source=config['source'],
+            deck_list=config['deck_list'],
+            debug=debug
+        )
         return render_template('real_time.html')
     else:
         return render_template('main.html')

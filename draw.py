@@ -10,7 +10,7 @@ from src.build_models import build_regression, build_classification
 
 
 class Draw:
-    def __init__(self, config, deck_list, source):
+    def __init__(self, config, deck_list, source, debug=False):
         with open(config, "rb") as f:
             self.configs = json.load(f)
         with open(deck_list) as f:
@@ -37,6 +37,8 @@ class Draw:
             verbose=False
         )
 
+        self.debug_mode = debug
+
     def process(self, result, display=False):
         predictions = []
 
@@ -46,6 +48,13 @@ class Draw:
 
             box_min_area = self.configs['box_min_area']
             box_max_area = self.configs['box_max_area']
+
+            if self.debug_mode:
+                cv2.putText(image, "box area :" + str(np.abs((x1 - x2) * (y1 - y2))), (x1, y2),
+                            cv2.FONT_HERSHEY_PLAIN,
+                            1.0,
+                            (255, 255, 255),
+                            2)
 
             if box_min_area < np.abs((x1 - x2) * (y1 - y2)) < box_max_area:
                 roi = image[y1:y2, x1:x2]
@@ -59,10 +68,25 @@ class Draw:
                     contour = contours[np.array(list(map(cv2.contourArea, contours))).argmax()]
                     area = cv2.contourArea(contour)
 
+                    if self.debug_mode:
+                        cv2.putText(image, "text area :" + str(area), (x1, y1 + (y2 - y1) // 2),
+                                    cv2.FONT_HERSHEY_PLAIN,
+                                    1.0,
+                                    (255, 255, 255),
+                                    2)
+
                     if min_area < area < max_area:
                         box_artwork, box_txt = src.tools.extract_artwork(contour, x2 - x1, y2 - y1)
                         if box_artwork is None:
                             break
+
+                        if self.debug_mode:
+                            cv2.putText(image, "area threshold :" + str(cv2.contourArea(box_artwork)),
+                                        (x1, y1 + (y2 - y1) // 4),
+                                        cv2.FONT_HERSHEY_PLAIN,
+                                        1.0,
+                                        (255, 255, 255),
+                                        2)
 
                         if cv2.contourArea(box_artwork) > self.configs['area_threshold']:
 

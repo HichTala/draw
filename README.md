@@ -205,5 +205,5 @@ If you have any questions, don't hesitate to open an issue.
 ---
 ## <div align="center">💬Contact</div>
 
-You can reach me on Twitter [@tizaden](https://twitter.com/tiazden) or by email at [hich.tala.phd@gmail.com](mailto:hich.tala.phd@gmail.com).
+You can reach me on Twitter [@tiazden](https://twitter.com/tiazden) or by email at [hich.tala.phd@gmail.com](mailto:hich.tala.phd@gmail.com).
 

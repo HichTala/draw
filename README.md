@@ -16,7 +16,7 @@
 
 [🇫🇷 Français](README_fr.md)
 
-DRAW (which stands for **D**etect and **R**ecognize **A** **W**ild range of cards) is the very first object detector
+DRAW (which stands for **D**etect and **R**ecognize **A** **W**ild range of cards) is an object detector
 trained to detect _Yu-Gi-Oh!_ cards in all types of images, and in particular in dueling images.
 
 Other works exist (see [Related Works](#div-aligncenterrelated-worksdiv)) but none is capable of recognizing cards during a duel.

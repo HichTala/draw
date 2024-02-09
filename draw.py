@@ -28,6 +28,9 @@ class Draw:
             device=device
         )
 
+        if source == '0':
+            source = str(self.configs['webcam'])
+
         self.results = model_regression(
             source=source,
             show_labels=False,

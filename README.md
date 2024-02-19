@@ -23,8 +23,8 @@ Other works exist (see [Related Works](#div-aligncenterrelated-worksdiv)) but no
 
 DRAW is entirely open source and all contributions are welcome.
 
-<video width="320" height="240" controls>
-  <source src="figures/model_in_action.mp4" type="video/mp4">
+<video width="640" height="480" controls>
+  <source src="https://github.com/HichTala/draw/raw/master/figures/model_in_action.mp4" type="video/mp4">
 </video>
 
 </div>

@@ -23,7 +23,9 @@ Other works exist (see [Related Works](#div-aligncenterrelated-worksdiv)) but no
 
 DRAW is entirely open source and all contributions are welcome.
 
-![](figures/model_in_action.mp4)
+<video width="320" height="240" controls>
+  <source src="figures/model_in_action.mp4" type="video/mp4">
+</video>
 
 </div>
 

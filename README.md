@@ -28,7 +28,7 @@ DRAW is entirely open source and all contributions are welcome.
 
 Here is a small overview :)
 
-<iframe src="https://drive.google.com/file/d/1GcgHdfmDRES2I1i8RUfx1DnCmnF_gPoC/preview" width="640" height="480" allow="autoplay"></iframe>
+![]([https://github.com/Your_Repository_Name/Your_GIF_Name.gif](https://github.com/HichTala/draw/blob/master/figures/proof_of_concept.gif))
 
 </div>
 

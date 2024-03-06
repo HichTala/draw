@@ -194,5 +194,7 @@ Il s'agit d'un jeu de données avec 22k classes (plus que la plupart des classif
 ---
 ## <div align="center">🔍Aperçu de la méthode</div>
 
-Un blog medium sera bientôt rédigé et publié, expliquant le processus principal, de la collecte des données à la prédiction finale. 
+Un blog medium expliquant le processus principal, de la collecte des données à la prédiction finale a été publié. Vous pouvez le retrouver [ici](https://medium.com/@hich.tala.phd/how-i-trained-a-model-to-detect-and-recognise-a-wide-range-of-yu-gi-oh-cards-6ea71da007fd). 
 Si vous avez des questions, n'hésitez pas à ouvrir une issue.
+
+[![Medium](https://img.shields.io/badge/Medium-12100E?style=flat&logo=medium&logoColor=white)](https://medium.com/@hich.tala.phd/how-i-trained-a-model-to-detect-and-recognise-a-wide-range-of-yu-gi-oh-cards-6ea71da007fd)

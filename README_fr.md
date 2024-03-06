@@ -9,6 +9,7 @@
 
 [![Licence](https://img.shields.io/github/license/Ileriayo/markdown-badges?style=flat)](LICENSE)
 [![Docker Pulls](https://img.shields.io/docker/pulls/hichtala/draw)](https://hub.docker.com/r/trueosiris/godaddypy/)
+[![Medium](https://img.shields.io/badge/Medium-12100E?style=flat&logo=medium&logoColor=white)](https://medium.com/@hich.tala.phd/how-i-trained-a-model-to-detect-and-recognise-a-wide-range-of-yu-gi-oh-cards-6ea71da007fd)
 [![Twitter](https://badgen.net/badge/icon/twitter?icon=twitter&label)](https://twitter.com/tiazden)
 
 [![Model on HF](https://huggingface.co/datasets/huggingface/badges/resolve/main/model-on-hf-sm.svg)](https://huggingface.co/HichTala/draw)

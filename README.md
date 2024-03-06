@@ -199,11 +199,10 @@ It is a dataset with 22k classes (more than most classifiers) which is interesti
 
 ---
 ## <div align="center">🔍Method Overview</div>
-[![Medium](https://img.shields.io/badge/Medium-12100E?style=flat&logo=medium&logoColor=white)](https://medium.com/@hich.tala.phd/how-i-trained-a-model-to-detect-and-recognise-a-wide-range-of-yu-gi-oh-cards-6ea71da007fd)
-
 A medium blog post explainng the main process from data collection to final prediction has been written. You can access it at [this](https://medium.com/@hich.tala.phd/how-i-trained-a-model-to-detect-and-recognise-a-wide-range-of-yu-gi-oh-cards-6ea71da007fd) adress.
 If you have any questions, don't hesitate to open an issue.
 
+[![Medium](https://img.shields.io/badge/Medium-12100E?style=flat&logo=medium&logoColor=white)](https://medium.com/@hich.tala.phd/how-i-trained-a-model-to-detect-and-recognise-a-wide-range-of-yu-gi-oh-cards-6ea71da007fd)
 ---
 ## <div align="center">💬Contact</div>
 

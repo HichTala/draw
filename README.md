@@ -26,6 +26,10 @@ DRAW is entirely open source and all contributions are welcome.
 
 </div>
 
+Here is a small overview :)
+
+<iframe src="https://drive.google.com/file/d/1GcgHdfmDRES2I1i8RUfx1DnCmnF_gPoC/preview" width="640" height="480" allow="autoplay"></iframe>
+
 </div>
 
 ---

@@ -28,7 +28,8 @@ DRAW is entirely open source and all contributions are welcome.
 
 Here is a small overview :)
 
-![](https://github.com/HichTala/draw/blob/master/figures/proof_of_concept.gif)
+<img src="https://github.com/HichTala/draw/blob/master/figures/proof_of_concept.gif" width="320" height="180" />
+
 </div>
 
 ---

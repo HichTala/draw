@@ -174,22 +174,14 @@ pour permettre aux spectateurs de lire les cartes.
 Bien qu'à ma connaissance `draw` soit le premier détecteur capable de localiser et de détecter des cartes _Yu-Gi-Oh!_ dans un environnement de duel, 
 d'autres travaux existent et ont été une source d'inspiration pour ce projet. Il convient donc de les mentionner proprement.
 
-[Yu-Gi-Oh ! NEURON](https://www.konami.com/games/eu/fr/products/yugioh_neuron/) est une application officielle développée par _KONAMI_ <sup>®</sup>.
-Elle est dotée de nombreuses fonctionnalités, dont la reconnaissance des cartes. L'application est capable de reconnaître un total de 20 cartes à la fois, ce qui reste très honorable. 
-L'inconvénient est que les cartes doivent être de bonne qualité pour être reconnues, ce qui n'est pas forcément le cas dans un contexte de duel. 
-De plus, elle n'est pas intégrable, la seule et unique façon de l'utiliser est donc d'utiliser l'application.
+[Yu-Gi-Oh ! NEURON](https://www.konami.com/games/eu/fr/products/yugioh_neuron/) est une application officielle développée par _KONAMI_ <sup>®</sup>. Elle est dotée de nombreuses fonctionnalités, dont la reconnaissance des cartes. L'application est capable de reconnaître un total de 20 cartes à la fois, ce qui reste très honorable. L'inconvénient est que les cartes doivent être de bonne qualité pour être reconnues, ce qui n'est pas forcément le cas dans un contexte de duel. De plus, elle n'est pas intégrable, la seule et unique façon de l'utiliser est donc d'utiliser l'application.
 
-[yugioh one shot learning](https://github.com/vanstorm9/yugioh-one-shot-learning) fait par `vanstorm9` est un   
-programme de classification des cartes Yu-Gi-Oh!. Il utilise un réseau de neurones siamois pour entraîner son modèle.
-Il donne des résultats très impressionnants sur des images de bonne qualité, mais pas très bons sur des images de moins bonne qualité,
+[yugioh one shot learning](https://github.com/vanstorm9/yugioh-one-shot-learning) fait par `vanstorm9` est un programme de classification des cartes Yu-Gi-Oh!. Il utilise un réseau de neurones siamois pour entraîner son modèle. Il donne des résultats très impressionnants sur des images de bonne qualité, mais pas très bons sur des images de moins bonne qualité,
 et il ne peut pas localiser les cartes.
 
-[Yolov8](https://github.com/ultralytics/ultralytics) est la dernière version de la très célèbre famille `yolo` de modèles de détection d'objets.
-Est-il vraiment nécessaire de le présenter aujourd'hui ? Il représente l'état de l'art en matière de modèle de détection d'objets en temps réel.
+[Yolov8](https://github.com/ultralytics/ultralytics) est la dernière version de la très célèbre famille `yolo` de modèles de détection d'objets. Est-il vraiment nécessaire de le présenter aujourd'hui ? Il représente l'état de l'art en matière de modèle de détection d'objets en temps réel.
 
-[BEiT](https://arxiv.org/pdf/2106.08254.pdf) est un modèle pré-entraîné de classification d'images. Il utilise des _image transformers_ 
-qui sont basés sur le mécanisme d'attention. Il convient à notre problème, car les auteurs proposent également un modèle pré-entraîné dans `Imagenet-22K`.
-Il s'agit d'un jeu de données avec 22k classes (plus que la plupart des classifieurs) ce qui est intéressant dans notre cas puisqu'il y a plus de 11k cartes dans _Yu-Gi-Oh!_.
+[BEiT](https://arxiv.org/pdf/2106.08254.pdf) est un modèle pré-entraîné de classification d'images. Il utilise des _image transformers_ qui sont basés sur le mécanisme d'attention. Il convient à notre problème, car les auteurs proposent également un modèle pré-entraîné dans `Imagenet-22K`. Il s'agit d'un jeu de données avec 22k classes (plus que la plupart des classifieurs) ce qui est intéressant dans notre cas puisqu'il y a plus de 11k cartes dans _Yu-Gi-Oh!_.
 
 ---
 ## <div align="center">🔍Aperçu de la méthode</div>

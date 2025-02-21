@@ -183,7 +183,7 @@ et il ne peut pas localiser les cartes.
 
 [BEiT](https://arxiv.org/pdf/2106.08254.pdf) est un modèle pré-entraîné de classification d'images. Il utilise des _image transformers_ qui sont basés sur le mécanisme d'attention. Il convient à notre problème, car les auteurs proposent également un modèle pré-entraîné dans `Imagenet-22K`. Il s'agit d'un jeu de données avec 22k classes (plus que la plupart des classifieurs) ce qui est intéressant dans notre cas puisqu'il y a plus de 11k cartes dans _Yu-Gi-Oh!_.
 
-[SpellTable] (https://spelltable.wizards.com/) est une application gratuite conçue et réalisée par `Jonathan Rowny` et son équipe pour jouer à _Magic : The Gathering_ à distance. 
+[SpellTable](https://spelltable.wizards.com/) est une application gratuite conçue et réalisée par `Jonathan Rowny` et son équipe pour jouer à _Magic : The Gathering_ à distance. 
 Elle permet au joueur de cliquer sur une carte sur le flux de n'importe quel joueur pour l'identifier rapidement. 
 Il a quelques similitudes avec `draw` puisqu'il rend possible la localisaton et la reconnaissance de n'importe quelle carte à partir d'une base de données de 17 000 cartes.
 L'idée est proche de ce projet, mais elle n'en est pas à l'origine.

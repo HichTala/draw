@@ -201,6 +201,11 @@ I think it doesn't need to be presented today, it represents state-of-the-art re
 which are based on attention mechanism. It suits our problem because authors also propose a pre-trained model in `Imagenet-22K`.
 It is a dataset with 22k classes (more than most classifiers) which is interesting for our case since there is mode than 11k cards in _Yu-Gi-Oh!_. 
 
+[SpellTable](https://spelltable.wizards.com/) is a free application designed and built by `Jonathan Rowny` and his team for playing paper _Magic: The Gathering_ from a distance. 
+It allows player to click on a card on any player's feed to quickly identify it. 
+It has some similarity with `draw` since it can localize and recognize any card from a built in database of 17 000 cards.
+The idea is close to this project, but she didn't originate it.
+
 ---
 ## <div align="center">🔍Method Overview</div>
 A medium blog post explainng the main process from data collection to final prediction has been written. You can access it at [this](https://medium.com/@hich.tala.phd/how-i-trained-a-model-to-detect-and-recognise-a-wide-range-of-yu-gi-oh-cards-6ea71da007fd) adress.

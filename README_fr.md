@@ -195,3 +195,13 @@ Un blog medium expliquant le processus principal, de la collecte des données à
 Si vous avez des questions, n'hésitez pas à ouvrir une issue.
 
 [![Medium](https://img.shields.io/badge/Medium-12100E?style=flat&logo=medium&logoColor=white)](https://medium.com/@hich.tala.phd/how-i-trained-a-model-to-detect-and-recognise-a-wide-range-of-yu-gi-oh-cards-6ea71da007fd)
+
+---
+## <div align="center">💬Contact</div>
+
+Vous pouvez me joindre sur Twitter [@tiazden](https://twitter.com/tiazden) ou par mail [hich.tala.phd@gmail.com](mailto:hich.tala.phd@gmail.com).
+
+---
+## <div align="center">⭐Historique des Stars</div>
+
+[![Star History Chart](https://api.star-history.com/svg?repos=hichtala/draw&type=Date)](https://star-history.com/#hichtala/draw&Date)

@@ -216,4 +216,7 @@ If you have any questions, don't hesitate to open an issue.
 ## <div align="center">💬Contact</div>
 
 You can reach me on Twitter [@tiazden](https://twitter.com/tiazden) or by email at [hich.tala.phd@gmail.com](mailto:hich.tala.phd@gmail.com).
+---
+## <div align="center">⭐Star History</div>
+<iframe style="width:100%;height:auto;min-width:600px;min-height:400px;" src="https://star-history.com/embed?secret=Z2hwX1hQWVhJVVJwVTlLVDIyUjFZUnJNbWViN2d6blFScjBrVFpMZQ==#hichtala/draw&Date" frameBorder="0"></iframe>
 

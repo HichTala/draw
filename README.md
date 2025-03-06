@@ -221,8 +221,4 @@ You can reach me on Twitter [@tiazden](https://twitter.com/tiazden) or by email 
 ---
 ## <div align="center">⭐Star History</div>
 
-<div align="center">
-    <div>
-    [![Star History Chart](https://api.star-history.com/svg?repos=hichtala/draw&type=Date)](https://star-history.com/#hichtala/draw&Date)
-    </div>
-</div>
+[![Star History Chart](https://api.star-history.com/svg?repos=hichtala/draw&type=Date)](https://star-history.com/#hichtala/draw&Date)

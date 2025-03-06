@@ -212,12 +212,15 @@ A medium blog post explainng the main process from data collection to final pred
 If you have any questions, don't hesitate to open an issue.
 
 [![Medium](https://img.shields.io/badge/Medium-12100E?style=flat&logo=medium&logoColor=white)](https://medium.com/@hich.tala.phd/how-i-trained-a-model-to-detect-and-recognise-a-wide-range-of-yu-gi-oh-cards-6ea71da007fd)
+
 ---
 ## <div align="center">💬Contact</div>
 
 You can reach me on Twitter [@tiazden](https://twitter.com/tiazden) or by email at [hich.tala.phd@gmail.com](mailto:hich.tala.phd@gmail.com).
+
 ---
 ## <div align="center">⭐Star History</div>
 
+<div align="center">
 [![Star History Chart](https://api.star-history.com/svg?repos=hichtala/draw&type=Date)](https://star-history.com/#hichtala/draw&Date)
-
+</div>

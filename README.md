@@ -6,7 +6,7 @@
 
 <div>
 
-
+[![Licence](https://img.shields.io/pypi/l/ultralytics)](LICENSE)
 [![Docker Pulls](https://img.shields.io/docker/pulls/hichtala/draw?logo=docker)](https://hub.docker.com/r/hichtala/draw/)
 [![Medium](https://img.shields.io/badge/Medium-12100E?style=flat&logo=medium&logoColor=white)](https://medium.com/@hich.tala.phd/how-i-trained-a-model-to-detect-and-recognise-a-wide-range-of-yu-gi-oh-cards-6ea71da007fd)
 [![Twitter](https://badgen.net/badge/icon/twitter?icon=twitter&label)](https://twitter.com/tiazden)

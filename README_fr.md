@@ -3,10 +3,6 @@
         <img src="figures/banner-draw.png">
     </p>
 
-Nouvelle version [ici](https://github.com/draw2)
-
-[🇬🇧 English](README.md)
-
 <div>
 
 [![Licence](https://img.shields.io/pypi/l/ultralytics)](LICENSE)
@@ -17,6 +13,11 @@ Nouvelle version [ici](https://github.com/draw2)
 [![Model on HF](https://huggingface.co/datasets/huggingface/badges/resolve/main/model-on-hf-sm.svg)](https://huggingface.co/HichTala/draw)
 [![Dataset on HF](https://huggingface.co/datasets/huggingface/badges/resolve/main/dataset-on-hf-sm.svg)](https://huggingface.co/datasets/HichTala/yugioh_dataset)
 </div>
+
+Nouvelle version [ici](https://github.com/draw2)
+
+[🇬🇧 English](README.md)
+
 DRAW est le tout premier détecteur d'objets entraîné à détecter les cartes Yu-Gi-Oh! dans tous types d'images, 
 et en particulier dans les images de duels.
 

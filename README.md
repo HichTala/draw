@@ -9,7 +9,7 @@
 [![Licence](https://img.shields.io/pypi/l/ultralytics)](LICENSE)
 [![Docker Pulls](https://img.shields.io/docker/pulls/hichtala/draw?logo=docker)](https://hub.docker.com/r/hichtala/draw/)
 [![Medium](https://img.shields.io/badge/Medium-12100E?style=flat&logo=medium&logoColor=white)](https://medium.com/@hich.tala.phd/how-i-trained-a-model-to-detect-and-recognise-a-wide-range-of-yu-gi-oh-cards-6ea71da007fd)
-[![Twitter](https://badgen.net/badge/icon/twitter?icon=twitter&label)](https://twitter.com/tiazden)
+[![Twitter](https://badgen.net/badge/icon/twitter?icon=twitter&label)](https://twitter.com/hichtala)
 
 [![Model on HF](https://huggingface.co/datasets/huggingface/badges/resolve/main/model-on-hf-sm.svg)](https://huggingface.co/HichTala/draw)
 [![Dataset on HF](https://huggingface.co/datasets/huggingface/badges/resolve/main/dataset-on-hf-sm.svg)](https://huggingface.co/datasets/HichTala/yugioh_dataset)
@@ -215,7 +215,7 @@ If you have any questions, don't hesitate to open an issue.
 ---
 ## <div align="center">💬Contact</div>
 
-You can reach me on Twitter [@tiazden](https://twitter.com/tiazden) or by email at [hich.tala.phd@gmail.com](mailto:hich.tala.phd@gmail.com).
+You can reach me on Twitter [@hichtala](https://twitter.com/hichtala) or by email at [hich.tala.phd@gmail.com](mailto:hich.tala.phd@gmail.com).
 
 ---
 ## <div align="center">⭐Star History</div>

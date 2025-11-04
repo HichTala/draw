@@ -14,6 +14,8 @@
 [![Model on HF](https://huggingface.co/datasets/huggingface/badges/resolve/main/model-on-hf-sm.svg)](https://huggingface.co/HichTala/draw)
 [![Dataset on HF](https://huggingface.co/datasets/huggingface/badges/resolve/main/dataset-on-hf-sm.svg)](https://huggingface.co/datasets/HichTala/yugioh_dataset)
 
+New version available [here](https://github.com/draw2)
+
 [🇫🇷 Français](README_fr.md)
 
 DRAW (which stands for **D**etect and **R**ecognize **A** **W**ide range of cards) is an object detector

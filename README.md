@@ -14,7 +14,7 @@
 [![Model on HF](https://huggingface.co/datasets/huggingface/badges/resolve/main/model-on-hf-sm.svg)](https://huggingface.co/HichTala/draw)
 [![Dataset on HF](https://huggingface.co/datasets/huggingface/badges/resolve/main/dataset-on-hf-sm.svg)](https://huggingface.co/datasets/HichTala/yugioh_dataset)
 
-New version available [here](https://github.com/draw2)
+New version available [here](https://github.com/hichtala/draw2)
 
 [🇫🇷 Français](README_fr.md)
 

@@ -222,4 +222,12 @@ You can reach me on Twitter [@hichtala](https://twitter.com/hichtala) or by emai
 ---
 ## <div align="center">⭐Star History</div>
 
-[![Star History Chart](https://api.star-history.com/svg?repos=hichtala/draw&type=Date)](https://star-history.com/#hichtala/draw&Date)
+<a href="https://www.star-history.com/#hichtala/draw&hichtala/draw2&type=timeline&legend=top-left">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=hichtala/draw,hichtala/draw2&type=timeline&theme=dark&legend=top-left" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=hichtala/draw,hichtala/draw2&type=timeline&legend=top-left" />
+   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=hichtala/draw,hichtala/draw2&type=timeline&legend=top-left" />
+ </picture>
+</a>
+
+[![Star History Chart](https://api.star-history.com/svg?repos=hichtala/draw,hichtala/draw2&type=timeline&legend=top-left)](https://www.star-history.com/#hichtala/draw&hichtala/draw2&type=timeline&legend=top-left)

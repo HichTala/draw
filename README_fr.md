@@ -207,4 +207,4 @@ Vous pouvez me joindre sur Twitter [@hichtala](https://twitter.com/hichtala) ou 
 ---
 ## <div align="center">⭐Historique des Stars</div>
 
-[![Star History Chart](https://api.star-history.com/svg?repos=hichtala/draw&type=Date)](https://star-history.com/#hichtala/draw&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=hichtala/draw,hichtala/draw2&type=timeline&legend=top-left)](https://www.star-history.com/#hichtala/draw&hichtala/draw2&type=timeline&legend=top-left)
